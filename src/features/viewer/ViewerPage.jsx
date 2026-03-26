@@ -1,10 +1,13 @@
 import React from 'react';
-import InvitationPreview from '../../shared/components/InvitationPreview';
+import { useInvitationStore } from '../invitation';
+import Viewer from './Viewer';
 
 export default function ViewerPage() {
+  const data = useInvitationStore(state => state.data);
+
   return (
     <div className="bg-gray-100 min-h-screen">
-      <InvitationPreview mode="viewer" />
+      <Viewer data={data} mode="viewer" />
     </div>
   );
 }

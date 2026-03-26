@@ -1,58 +1,12 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-
-const initialInvitationState = {
-  title: '우리의 초대장',
-  greeting: '함께해주셔서 감사합니다.',
-  names: {
-    groom: '',
-    bride: '',
-    groomFather: '',
-    groomMother: '',
-    brideFather: '',
-    brideMother: ''
-  },
-  date: '',
-  location: {
-    venueName: '',
-    address: '',
-    lat: 37.5665, // default Seoul
-    lng: 126.9780
-  },
-  contact: {
-    accounts: [
-      { owner: '신랑', bank: '', number: '' },
-      { owner: '신부', bank: '', number: '' }
-    ],
-    useCopyButton: true
-  },
-  gallery: {
-    images: [],
-    type: 'grid' // 'grid' | 'slide'
-  },
-  style: {
-    backgroundColor: '#FAF8F5',
-    textColor: '#333333',
-    fontFamily: 'Nanum Myeongjo' // Default premium font
-  },
-  settings: {
-    dDayEnabled: true,
-    sectionVisibility: {
-      greeting: true,
-      location: true,
-      contact: true,
-      gallery: true
-    }
-  },
-  images: [] // Legacy main images, might merge with gallery later
-};
+import { initialInvitationState } from '../types/invitation.types';
 
 export const useInvitationStore = create(
   persist(
     (set) => ({
       data: initialInvitationState,
       
-      // Selectors (Actions)
       updateTitle: (title) => set((state) => ({ data: { ...state.data, title } })),
       updateGreeting: (greeting) => set((state) => ({ data: { ...state.data, greeting } })),
       updateNames: (names) => set((state) => ({ data: { ...state.data, names: { ...state.data.names, ...names } } })),
@@ -92,8 +46,7 @@ export const useInvitationStore = create(
       reset: () => set({ data: initialInvitationState })
     }),
     {
-      name: 'in-quick-invitation-storage', // Key for localStorage
+      name: 'in-quick-invitation-storage',
     }
   )
 );
-
