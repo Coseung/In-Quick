@@ -16,9 +16,9 @@ export default function LocationSection({ data }) {
     >
       <section className="py-20 px-8 text-center bg-white/50">
         <div className="mb-10">
-          <h3 className="text-lg font-serif text-[#4A3D39]">LOCATION</h3>
+          <h3 className="text-lg text-[#4A3D39]">LOCATION</h3>
           <p className="mt-4 font-bold text-gray-800">{data.location?.venueName}</p>
-          <p className="mt-1 text-sm text-gray-500 font-light">{data.location?.address}</p>
+          <p className="mt-1 text-sm text-gray-500">{data.location?.address}</p>
         </div>
         <div className="aspect-[16/10] bg-gray-100 rounded-2xl flex items-center justify-center text-gray-300 mb-8 border border-gray-100">
           <MapPin className="w-8 h-8 opacity-20" />

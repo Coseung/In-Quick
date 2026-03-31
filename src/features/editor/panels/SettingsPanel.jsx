@@ -20,6 +20,15 @@ export default function SettingsPanel({ data, updateDate, updateSettings }) {
             <div className={`absolute top-1 w-3 h-3 bg-white rounded-full transition-all ${data.settings?.dDayEnabled ? 'right-1' : 'left-1'}`} />
           </button>
         </div>
+        <div className="flex items-center justify-between mt-2 p-4 bg-[#F9F8F6] rounded-xl">
+          <span className="text-sm font-medium text-gray-700">달력 디데이 표시</span>
+          <button 
+            onClick={() => updateSettings({ calendarDDayEnabled: !data.settings?.calendarDDayEnabled })}
+            className={`w-10 h-5 rounded-full transition-colors relative ${data.settings?.calendarDDayEnabled ? 'bg-blue-500' : 'bg-gray-300'}`}
+          >
+            <div className={`absolute top-1 w-3 h-3 bg-white rounded-full transition-all ${data.settings?.calendarDDayEnabled ? 'right-1' : 'left-1'}`} />
+          </button>
+        </div>
       </section>
 
       <section>

@@ -1,6 +1,8 @@
 import React from 'react';
 import useScrollReveal from '../../../shared/hooks/useScrollReveal';
 
+import Calendar from '../../invitation/components/Calendar';
+
 export default function GreetingSection({ data }) {
   const { isVisible, domRef } = useScrollReveal();
 
@@ -16,9 +18,11 @@ export default function GreetingSection({ data }) {
       <section className="py-20 px-8 text-center border-t border-gray-100/30">
         <div className="mb-12">
           <span className="text-[10px] tracking-[0.2em] text-gray-400 uppercase">Invitation</span>
-          <h3 className="mt-2 text-xl font-serif text-[#4A3D39]">소중한 분들을 초대합니다</h3>
+          <h3 className="mt-2 text-xl text-[#4A3D39]">소중한 분들을 초대합니다</h3>
         </div>
-        <p className="text-sm leading-8 text-gray-600 whitespace-pre-line mb-16 font-light">
+
+        
+        <p className="text-sm leading-8 text-gray-600 whitespace-pre-line mb-16">
           {data.greeting || "함께해주셔서 감사합니다."}
         </p>
 

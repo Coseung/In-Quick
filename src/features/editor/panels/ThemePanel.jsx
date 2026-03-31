@@ -19,7 +19,7 @@ export default function ThemePanel({ data, updateStyle }) {
       <div>
         <h3 className="text-sm font-bold text-gray-900 mb-4">폰트 스타일</h3>
         <div className="space-y-3">
-          {['Nanum Myeongjo', 'Gowun Batang', 'Pretendard', 'Inter'].map(f => (
+          {['Nanum Myeongjo', 'Gowun Batang', 'Noto Serif KR'].map(f => (
             <button 
               key={f}
               onClick={() => updateStyle({ fontFamily: f })}
@@ -28,7 +28,8 @@ export default function ThemePanel({ data, updateStyle }) {
               }`}
               style={{ fontFamily: f }}
             >
-              {f === 'Nanum Myeongjo' ? '나눔 명조 (Premium)' : f}
+              {f === 'Nanum Myeongjo' ? '나눔 명조 (Premium)' : 
+               f === 'Noto Serif KR' ? '노토 세리프' : f}
             </button>
           ))}
         </div>

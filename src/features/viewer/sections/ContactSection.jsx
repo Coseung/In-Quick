@@ -16,8 +16,8 @@ export default function ContactSection({ data }) {
     >
       <section className="py-20 px-8 text-center">
         <div className="mb-10">
-          <h3 className="text-lg font-serif text-[#4A3D39]">CONTACT</h3>
-          <p className="mt-4 text-[13px] text-gray-500 font-light leading-relaxed">
+          <h3 className="text-lg text-[#4A3D39]">CONTACT</h3>
+          <p className="mt-4 text-[13px] text-gray-500 leading-relaxed">
             직접 찾아뵙지 못하는 분들을 위해<br />축하의 마음을 담을 계좌를 안내드립니다.
           </p>
         </div>

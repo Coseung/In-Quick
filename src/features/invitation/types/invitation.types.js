@@ -34,6 +34,7 @@ export const initialInvitationState = {
   },
   settings: {
     dDayEnabled: true,
+    calendarDDayEnabled: true,
     sectionVisibility: {
       greeting: true,
       location: true,

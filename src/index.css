@@ -7,3 +7,22 @@
     @apply antialiased bg-gray-50 text-gray-900 m-0 p-0;
   }
 }
+
+/* Custom Font Classes */
+.gowun-batang-regular {
+  font-family: "Gowun Batang", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gowun-batang-bold {
+  font-family: "Gowun Batang", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.noto-serif-kr {
+  font-family: "Noto Serif KR", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Heart } from 'lucide-react';
 import useScrollReveal from '../../../shared/hooks/useScrollReveal';
+import Calendar from '../../invitation/components/Calendar';
+
 
 const SlotNumber = ({ value }) => {
   const [displayValue, setDisplayValue] = useState(value);
@@ -80,8 +82,8 @@ export default function MainSection({ data }) {
     >
       <section className="relative pt-20 pb-16 px-6 text-center flex-shrink-0">
         <div className="mb-10 space-y-4">
-          <h2 className="text-xs tracking-[0.3em] font-light text-gray-500 uppercase">Our Wedding</h2>
-          <h1 className="text-[2.2rem] leading-tight font-serif whitespace-pre-line text-[#4A3D39]">
+          <h2 className="text-xs tracking-[0.3em] text-gray-500 uppercase">Our Wedding</h2>
+          <h1 className="text-[2.2rem] leading-tight whitespace-pre-line text-[#4A3D39]">
             {data.title || "초대합니다"}
           </h1>
         </div>
@@ -101,7 +103,7 @@ export default function MainSection({ data }) {
               {formatDate(data.date)}
             </p>
             {data.settings?.dDayEnabled && timeLeft && (
-              <div className="text-[11px] text-gray-400 font-serif tracking-[0.2em] flex gap-1">
+              <div className="text-[11px] text-gray-400 tracking-[0.2em] flex gap-1">
                 <span>D - </span>
                 <SlotNumber value={timeLeft.days} />
                 <span className="ml-1 opacity-60">
@@ -111,8 +113,11 @@ export default function MainSection({ data }) {
                 </span>
               </div>
             )}
+            {data.settings?.calendarDDayEnabled && (
+              <Calendar date={data.date} names={data.names} />
+            )}
           </div>
-          <p className="text-sm text-gray-400 font-light">
+          <p className="text-sm text-gray-400">
             {data.location?.venueName || '예식장 정보'}
           </p>
         </div>
